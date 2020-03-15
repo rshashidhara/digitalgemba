@@ -1,0 +1,104 @@
+{% extends base %}
+{% block preamble %}
+    <link href="app/static/css/custom.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom Style -->
+    <link href="dash/static/css/custom.min.css" rel="stylesheet">
+    {% endblock preamble%}
+
+{% block contents%}
+
+
+<div class ="container">
+    <div class = "row justify-content-around" ; style ="margin-bottom: 10px ; border : 3px solid #17202A   ">
+         <div class="col-md-8 " ; style = "background-color: #FFC110 ">
+            <div class = "container">
+                <h1 class= "display-5"> ಸ್ನೇಹಸೇವ ಟ್ರಸ್ಟ್  </h1>
+                <p class = "lead"> Dashboard for trust Metrics </p>
+            </div>   
+        </div>
+
+        <div class="col-md-4 " ; style = "background-color: #3498DB;">
+            <div class = "container">
+                <h1 class= "display-5"> SnehaSeva Trust </h1>
+                <p class = "lead"> Dashboard for trust Metrics </p>
+            </div>
+        </div>  
+    </div>
+
+
+
+    <div class = "col-md-12" , style = "background-color: #f5f5f5 ">
+        <div class="clearfix">   
+            <h2 > Regualtory </h2>
+            <p> Metrics for statutory requirements</p>
+        </div>    
+    </div>
+
+    <div class="row">
+        <div class="col-md-6";>
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Audits</h3>
+                     <p class="card-text"> Number of financial Audits per year Planned vs Actual</p>   
+                </div> 
+            </div>
+        </div>  
+
+        <div class="col-md-6";>
+            <div class="card">
+                <div class="card-body">
+                        <div class = "x_title">  
+                            <h3 class="card-title">Commitiee Meetings</h3>
+                            <p class="card-text">Number of Meetings plan vs actual</p>
+                            <div class="clearfix"></div>
+                        </div>    
+                     {{ embed(roots.cmplot) }}  
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+
+
+    <div class = "col-md-12" , style = "background-color: #f4e8df">
+        <div class="clearfix">   
+            <h2 > Indicators </h2>
+            <p> Key Perofrmance Indicators </p>
+        </div>    
+    </div>
+
+ <hr>    
+
+    <div class="row">
+        <div class="col-md-6";>
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Teachers Qualification </h3>
+                    <p class="card-text"> Teachers of tution centers </p>
+                    <div class="clearfix"></div>
+                </div> 
+                {{ embed(roots.teachplot) }} 
+            </div>
+        </div>  
+
+        <div class="col-md-6";>
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Health : Camps</h3>
+                    <p class="card-text">Number of Camp and Benifited </p>
+                            <div class="clearfix"></div>
+                </div>    
+            </div>
+         </div>
+    </div>
+</div> 
+
+ {% endblock%}
